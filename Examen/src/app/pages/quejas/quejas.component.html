@@ -1,0 +1,52 @@
+<div class="container">
+
+  <div class="starter-template">
+
+    <div class="row">
+
+      <div class="col-md-12 mt-5">
+        <h1></h1>
+
+      <form [formGroup]="quejas" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Nombres y Apellidos</label>
+                <input type="text" formControlName="nya" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nya.errors }" />
+                <div *ngIf="submitted && f.nya.errors" class="invalid-feedback">
+                    <div *ngIf="f.nya.errors.required">Por favor, ingresa tus Nombres y Apellidos</div>
+                </div>
+            </div>
+            <div class="form-group">
+              <label>Pais</label>
+              <select class="form-control" formControlName="pais">
+                <option>Chile</option>
+                <option>Argentina</option>
+                <option>Peru</option>
+                <option>Bolivia</option>
+                <option>Brasil</option>
+              </select>
+
+              <div *ngIf="submitted && f.pais.errors" class="invalid-feedback">
+                <div *ngIf="f.pais.errors.required">Por favor selecciones algun pais</div>
+            </div>
+
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea class="form-control" formControlName="mensaje" rows="3" [ngClass]="{ 'is-invalid': submitted && f.mensaje.errors }"></textarea>
+                <div *ngIf="submitted && f.mensaje.errors" class="invalid-feedback">
+                    <div *ngIf="f.mensaje.errors.required">Por favor, ingresa el Mensaje ( 6 Caracteres mínimo )</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+
+    </div>
+
+
+    </div>
+
+  </div>
+
+</div>

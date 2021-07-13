@@ -1,0 +1,10 @@
+<div class="bookBox">
+  <div *ngFor="let libro of libros">
+    <div class="card border-light mb-3" style="max-width: 18rem;">
+      <div class="text titulo">{{libro.titulo}}</div>
+      <img class="card-img-top" src={{libro.imagen}}>
+      <div class="text">Autor: {{libro.autor}}</div>
+      <div class="text">Páginas: {{libro.paginas}}</div>
+    </div>
+  </div>
+</div>
